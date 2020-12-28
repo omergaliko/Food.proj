@@ -18,7 +18,7 @@ pipeline {
         }
         stage('Test Docker image') {
             steps {
-                dir('Food.proj/tests') {
+                dir('foodproj/tests') {
                     script{
                        sh "sudo chmod 755 basic.test.sh"
                        sh "sudo ./basic.test.sh"
