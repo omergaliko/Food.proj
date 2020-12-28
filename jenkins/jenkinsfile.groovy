@@ -8,7 +8,7 @@ pipeline {
     stages {
         stage('Build Docker image') {
             steps {
-                dir('Food.proj'){
+                dir('./'){
                     script {
                         sh "sudo chmod 777 Dockerfile"
                         sh "sudo docker build -t foodproj ."
