@@ -10,9 +10,6 @@ check_result () {
   fi
 }
 
-for sentiment in positive negative neutral; do
-  sudo docker run intservice -w $sentiment | grep $sentiment
-  check_result $sentiment
-done
-
+  sudo docker run foodproj -f steak | grep steak
+  check_result steak
 exit 0
