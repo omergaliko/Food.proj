@@ -1,8 +1,8 @@
 FROM python:3
 USER root
-RUN mkdir /Food.proj
+RUN mkdir /FoodProj
 RUN chmod -R 755 /Food.proj
 COPY *.py /Food.proj/
-COPY configurations.json /Food.proj/
-WORKDIR "/Food.proj"
-ENTRYPOINT ["/usr/local/bin/python3", "//main.py"]
+COPY configurations.json /FoodProj/
+WORKDIR "/FoodProj"
+ENTRYPOINT ["/usr/local/bin/python3", "/FoodProj/main.py"]
