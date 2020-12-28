@@ -10,6 +10,6 @@ check_result () {
   fi
 }
 
-  sudo docker run foodproj -f steak | grep steak
+  echo "sudo docker run foodproj -f steak | grep steak"
   check_result steak
 exit 0
