@@ -11,7 +11,7 @@ pipeline {
                 dir('Food.proj'){
                     script {
                         sh "sudo chmod 777 Dockerfile"
-                        sh "sudo docker build -t Food.proj ."
+                        sh "sudo docker build -t foodproj ."
                     }
                 }
             }
