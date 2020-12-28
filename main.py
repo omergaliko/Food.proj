@@ -1,14 +1,49 @@
-import requests
+from logs import logger
+import json
+import send
+import argparse
 
-url = "https://nutritionix-api.p.rapidapi.com/v1_1/item"
 
-querystring = {"upc":"49000036756"}
+def load_config():
+    with open('./configuration.json') as json_file:
+        configs = json.load(json_file)
+        key = configs['configurations']['key']
+        host = configs['configurations']['host']
+        return key, host
 
-headers = {
-    'x-rapidapi-key': "736e99ae1amsh2949ecbc563fbe6p1f85d5jsne4ed66793b05",
-    'x-rapidapi-host': "nutritionix-api.p.rapidapi.com"
-    }
+def main():
+    parser = argparse.ArgumentParser()
+    parser.add_argument("-f", "--food", type=str, help="Word to get sentiment for", required=True)
+    args = parser.parse_args()
+    food = args.food
+    print(food)
+    logger.info("The selected food is: " + str(args))
 
-response = requests.request("GET", url, headers=headers, params=querystring)
+    key, host = load_config()
+    send.send(key, host, food)
 
-print(response.text)
+
+main()
+
+
+
+
+
+
+#print(f' item name: {item_name}\n brand name: {brand_name}\n calories: {calories}')
+
+
+#print(response.text)
+#hits_test = [1 for response in range(1-10):,]
+'''
+def main():
+    parser = argparse.ArgumentParser()
+    parser.add_argument("-w", "--word", type=str, help="Word to get sentiment for", required=True)
+    args = parser.parse_args()
+    word = args.word
+    print(word)
+parser = argparse.ArgumentParser()
+'''
+#food_search = input("which food category whould u like to search: ")
+#hits = response[1]["fields"]['item_name']
+#hits_test
