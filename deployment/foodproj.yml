@@ -1,20 +1,20 @@
 ---
-name: int service deploymnent
-hosts: intservice
-become: yes
+- name: int service deploymnent
+  hosts: intservice
+  become: yes
 
 
-tasks:
-  - name: Make sure docker is installed
-  apt:
-    name: docker
-    state: present
-    update_cache: yes
+  tasks:
+    - name: Make sure docker is installed
+      apt:
+        name: docker
+        state: present
+        update_cache: yes
 
 
- - name: Start docker service
-   service:
-     name: docker
-     state: started
+    - name: Start docker service
+      service:
+        name: docker
+        state: started
 
 
