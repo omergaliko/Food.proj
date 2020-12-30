@@ -1,4 +1,5 @@
-def userInput
+def lastCommit
+def latestVersion
 
 pipeline {
 
@@ -31,9 +32,11 @@ pipeline {
                 sh "pwd"
             }
         }
-        stage('Print Inputed string') {
-            steps {
-                println("Empty stage")
+        stage('Deploy to Prod') {
+steps {
+script {
+dir('deployment') {
+sh "ansible-playbook -i inventory.ini superhero.yml --extra-vars tag=${latestVersion}-${lastCommit} -vvv"
             }
         }
     }

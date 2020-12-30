@@ -1,5 +1,6 @@
 FROM python:3
 USER root
+RUN pip3 install requests
 RUN mkdir /foodproj
 RUN chmod -R 755 /foodproj
 COPY *.py /foodproj/
