@@ -21,6 +21,7 @@ pipeline {
                 dir('./tests') {
                     script{
                         try {
+                            sh "sudo chmod 777 Dockerfile"
                             sh "./basic.test.sh"
                         } catch (err) {
                             println("Error thrown on test file execution")
