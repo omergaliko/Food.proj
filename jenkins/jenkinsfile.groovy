@@ -1,4 +1,5 @@
-def userInput
+def latestVersion
+def lastCommit
 
 pipeline {
 
@@ -34,7 +35,7 @@ pipeline {
         }
         stage('Upload image to repository') {
             steps {
-                sh "pwd"
+                sh "sudo docker push omergaliko/foodproj:${latestVersion}-${lastCommit}"
             }
         }
         stage('Deploy to Prod') {
