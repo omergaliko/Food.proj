@@ -57,4 +57,4 @@ ssh ubuntu@${prod_server_ip} sudo docker run -d intservice
 
 4. make sure it is executed correctly
 ./bash.test.sh
-'''
+'''}
