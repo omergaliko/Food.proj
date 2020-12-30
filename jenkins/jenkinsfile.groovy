@@ -33,10 +33,10 @@ pipeline {
             }
         }
         stage('Deploy to Prod') {
-steps {
-script {
-dir('deployment') {
-sh "ansible-playbook -i inventory.ini superhero.yml --extra-vars tag=${latestVersion}-${lastCommit} -vvv"
+            steps {
+                script {
+                    dir('deployment') {
+                        println("continue")
             }
         }
     }
