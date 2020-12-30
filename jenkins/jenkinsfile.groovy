@@ -18,7 +18,7 @@ pipeline {
         }
         stage('Test Docker image') {
             steps {
-                dir('foodproj/tests') {
+                dir('./tests') {
                     script{
                         try {
                             sh "./basic.test.sh"
