@@ -1,5 +1,5 @@
-def latestVersion
 def lastCommit
+def latestVersion
 
 pipeline {
 
