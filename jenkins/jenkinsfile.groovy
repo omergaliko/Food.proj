@@ -19,7 +19,7 @@ pipeline {
                         latestVersion = _latestVersion.trim()
                         println("Latest Version seen is ${latestVersion}")
                         println("Latest commit seen is ${lastCommit}")
-                        sh "sudo docker build -t omergaliko/foodproj:${latestVersion}-${lastCommit} .
+                        sh "sudo docker build -t omergaliko/foodproj:${latestVersion}-${lastCommit} ."
                     }
                 }
             }
