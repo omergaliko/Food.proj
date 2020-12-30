@@ -36,8 +36,9 @@ steps {
 script {
 dir('deployment') {
 sh "ansible-playbook -i inventory.ini superhero.yml --extra-vars tag=${latestVersion}-${lastCommit} -vvv"
-            }
-        }
+             }
+          }
+       }
     }
 }
 '''
