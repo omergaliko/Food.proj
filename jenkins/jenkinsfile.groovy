@@ -42,7 +42,7 @@ pipeline {
         }
         stage('Upload image to repository') {
             steps {
-                sh "sudo docker push ${latestVersion}-${lastCommit}"
+                sh "sudo docker push omergaliko/foodproj:${latestVersion}-${lastCommit}"
             }
         }
         stage('Deploy to Prod') {
