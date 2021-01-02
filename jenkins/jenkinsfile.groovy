@@ -45,14 +45,15 @@ pipeline {
                 sh "sudo docker push omergaliko/foodproj:${latestVersion}-${lastCommit}"
             }
         }
+        stage('Deploy to Prod') {
             steps {
-              script {
-              dir('deployment') {
+               script {
+                   dir('deployment') {
+                       sh "ansible-playbook -i inventory.ini foodproj.yml --extra-vars tag=${latestVersion}-${lastCommit}"
+                   }
+               }
 
-              sh "ansible-playbook -i inventory.ini foodproj.yml --extra-vars tag=${latestVersion}-${lastCommit}"
-
+            }
         }
-      }
     }
-  }
 }
