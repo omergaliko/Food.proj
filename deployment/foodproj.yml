@@ -1,18 +1,16 @@
 ---
-- name: int service deploymnent
-  hosts: intservice
+- name: food project
+  hosts: foodproj
   become: yes
-
 
   tasks:
     - name: Make sure docker is installed
       apt:
-        name: docker
+        name: docker.io
         state: present
         update_cache: yes
 
-
-    - name: Start docker service
+    - name: Start  docker service
       service:
         name: docker
         state: started
