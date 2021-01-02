@@ -46,20 +46,10 @@ pipeline {
             }
         }
             steps {
-            script {
-            dir('deployment') {
-            sh "ansible-playbook -i inventory.ini foodproj.yml --extra-vars tag=${latestVersion}-${lastCommit}"
+              script {
+              dir('deployment') {
+              sh "ansible-playbook -i inventory.ini foodproj.yml --extra-vars tag=${latestVersion}-${lastCommit}"
             }
         }
     }
 }
-
-
-
-
-
-
-
-
-
-
