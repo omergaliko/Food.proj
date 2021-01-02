@@ -17,7 +17,7 @@
 
 
     - name: Start food container
-      shell: "docker run omergaliko/foodproj:{{ tag }} -w steak"
+      shell: "docker run omergaliko/foodproj:{{ tag }} -f steak"
 
 
 
