@@ -16,3 +16,8 @@
         state: started
 
 
+    - name: Start food container
+      shell: "docker run omergaliko/foodproj:{{ tag }} -w steak"
+
+
+
