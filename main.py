@@ -7,8 +7,8 @@ import argparse
 def load_config():
     with open('./configuration.json') as json_file:
         configs = json.load(json_file)
-        key = configs['configurations']['key']
-        host = configs['configurations']['host']
+        key = configs['configuration']['key']
+        host = configs['configuration']['host']
         return key, host
 
 def main():
